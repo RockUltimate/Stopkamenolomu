@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Petice - Stop Kamenolomu</title>
+  <meta name="description" content="Podepište petici proti plánovanému kamenolomu na Tobiášově vrchu u Bukova.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="/css/custom.css">
+  <script src="/js/app.js"></script>
+</head>
+<body x-data x-init="$store.nav.init()">
+
+  <!-- ===== Navigation ===== -->
+  <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 nav-scrolled py-3">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <a href="/" class="text-white font-bold text-xl tracking-tight" style="font-family: 'Newsreader', serif;">
+        STOP KAMENOLOMU
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/" class="nav-link text-sm font-medium">Domů</a>
+        <a href="/about.html" class="nav-link text-sm font-medium">O projektu</a>
+        <a href="/news.html" class="nav-link text-sm font-medium">Aktuality</a>
+        <a href="/petition.html" class="nav-link text-sm font-medium">Petice</a>
+        <a href="/contact.html" class="nav-link text-sm font-medium">Kontakt</a>
+        <a href="/petition.html" class="btn-white text-sm !py-2 !px-4">Podepsat petici</a>
+      </div>
+      <button class="md:hidden text-white" @click="$store.nav.mobileOpen = !$store.nav.mobileOpen">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path x-show="!$store.nav.mobileOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          <path x-show="$store.nav.mobileOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div x-show="$store.nav.mobileOpen" x-transition class="md:hidden bg-[#2D5F2D] px-6 py-4">
+      <a href="/" class="block py-2 text-white">Domů</a>
+      <a href="/about.html" class="block py-2 text-white">O projektu</a>
+      <a href="/news.html" class="block py-2 text-white">Aktuality</a>
+      <a href="/petition.html" class="block py-2 text-white">Petice</a>
+      <a href="/contact.html" class="block py-2 text-white">Kontakt</a>
+    </div>
+  </nav>
+
+  <!-- ===== Page Header ===== -->
+  <section class="bg-primary pt-32 pb-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Petice</h1>
+      <p class="text-lg text-white/80">
+        Každý podpis se počítá. Připojte se k nám.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Signature Counter ===== -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center fade-in">
+      <div class="mb-6">
+        <div class="petition-counter">1 200+</div>
+        <p class="text-xl text-[#5A5A5A] mt-2">podpisů k datu 1.12.2025</p>
+      </div>
+      <div class="w-full max-w-md mx-auto bg-[#E8E0D8] rounded-full h-4 mb-8">
+        <div class="bg-[#2D5F2D] h-4 rounded-full" style="width: 60%;"></div>
+      </div>
+      <p class="text-lg text-[#2C2C2C] font-medium mb-2">Podepisujte petici dále!!!</p>
+      <p class="text-[#5A5A5A]">Potřebujeme co nejvíce hlasů, abychom ukázali sílu občanského odporu.</p>
+    </div>
+  </section>
+
+  <!-- ===== How to Sign ===== -->
+  <section class="bg-cream py-20 px-6">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl font-bold text-[#2D5F2D] mb-10 text-center fade-in">Jak podepsat</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto fade-in">
+
+        <!-- Physical signing -->
+        <div class="action-card text-left">
+          <div class="w-12 h-12 mb-4 rounded-full bg-[#2D5F2D]/10 flex items-center justify-center">
+            <svg class="w-6 h-6 text-[#2D5F2D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[#2C2C2C] mb-3">Osobně</h3>
+          <p class="text-[#5A5A5A] mb-4">Petici můžete podepsat osobně na těchto místech:</p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-[#2D5F2D] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <div>
+                <p class="font-medium text-[#2C2C2C]">Bedlno 37</p>
+                <p class="text-sm text-[#5A5A5A]">Hlavní sběrné místo podpisů</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-[#2D5F2D] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <div>
+                <p class="font-medium text-[#2C2C2C]">Restaurace Clear Point, Hokov</p>
+                <p class="text-sm text-[#5A5A5A]">Petice k dispozici v provozní době</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- E-petition -->
+        <div class="action-card text-left">
+          <div class="w-12 h-12 mb-4 rounded-full bg-[#2D5F2D]/10 flex items-center justify-center">
+            <svg class="w-6 h-6 text-[#2D5F2D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[#2C2C2C] mb-3">Online (E-petice)</h3>
+          <p class="text-[#5A5A5A] mb-6">Podepište petici pohodlně z domova prostřednictvím elektronické petice.</p>
+          <a href="#" class="btn-primary">Podepsat e-petici →</a>
+          <p class="text-xs text-[#8B7355] mt-4">Odkaz na e-petici bude brzy aktualizován.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Why Sign ===== -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto fade-in">
+      <h2 class="text-3xl font-bold text-[#2D5F2D] mb-6 text-center">Proč podepsat?</h2>
+      <div class="prose text-[#5A5A5A] mx-auto">
+        <p>
+          Vaším podpisem vyjadřujete nesouhlas s plánovanou otvírkou kamenolomu na Tobiášově vrchu.
+          Petice je důležitým nástrojem občanského odporu a má váhu v řízeních na úrovni krajského úřadu
+          i Ministerstva životního prostředí.
+        </p>
+        <p>
+          Každý podpis se počítá — čím více podpisů získáme, tím silnější je naše pozice při jednáních
+          s úřady a investorem. Společně můžeme ochránit naši krajinu pro budoucí generace.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="bg-primary py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">Děkujeme za vaši podporu!</h2>
+      <p class="text-lg text-white/80 mb-8">Sdílejte petici dál a pomozte nám získat ještě více podpisů.</p>
+      <a href="/" class="btn-white">Zpět na hlavní stránku</a>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="bg-[#1E421E] text-white py-16 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div>
+        <h3 class="text-lg font-bold mb-4" style="font-family: 'Newsreader', serif;">STOP KAMENOLOMU</h3>
+        <p class="text-white/70 text-sm leading-relaxed">Chráníme přírodu a podporujeme udržitelnost v okolí Bukova u Hořoviček.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4 text-sm uppercase tracking-wider text-white/50">Navigace</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/" class="text-white/70 hover:text-white transition-colors">Domů</a></li>
+          <li><a href="/about.html" class="text-white/70 hover:text-white transition-colors">O projektu</a></li>
+          <li><a href="/news.html" class="text-white/70 hover:text-white transition-colors">Aktuality</a></li>
+          <li><a href="/petition.html" class="text-white/70 hover:text-white transition-colors">Petice</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4 text-sm uppercase tracking-wider text-white/50">Kontakt</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li>Bedlno 37</li>
+          <li>Restaurace Clear Point, Hokov</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4 text-sm uppercase tracking-wider text-white/50">Sociální sítě</h4>
+        <div class="flex gap-4">
+          <a href="#" class="text-white/70 hover:text-white transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-10 pt-8 border-t border-white/10 text-center text-sm text-white/40">
+      &copy; 2025 Stop Kamenolomu - Bukov u Hořoviček. Všechna práva vyhrazena.
+    </div>
+  </footer>
+
+</body>
+</html>

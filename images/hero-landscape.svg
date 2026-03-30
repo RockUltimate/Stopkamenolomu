@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" fill="none">
+  <!-- Sky -->
+  <rect width="1920" height="1080" fill="#87CEEB"/>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5B9BD5"/>
+      <stop offset="100%" stop-color="#B5D8F0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="600" fill="url(#sky)"/>
+  <!-- Distant hills -->
+  <path d="M0 500 Q200 380 500 450 Q700 350 960 420 Q1200 340 1400 400 Q1600 350 1920 430 L1920 1080 L0 1080Z" fill="#6B8E6B"/>
+  <!-- Mid hills -->
+  <path d="M0 580 Q300 480 600 530 Q800 460 1100 520 Q1400 450 1920 530 L1920 1080 L0 1080Z" fill="#4A7C59"/>
+  <!-- Foreground -->
+  <path d="M0 700 Q400 620 800 680 Q1200 630 1920 700 L1920 1080 L0 1080Z" fill="#2D5F2D"/>
+  <!-- Trees -->
+  <g fill="#1E421E">
+    <ellipse cx="300" cy="600" rx="30" ry="50"/>
+    <ellipse cx="500" cy="570" rx="25" ry="40"/>
+    <ellipse cx="1400" cy="580" rx="35" ry="55"/>
+    <ellipse cx="1600" cy="610" rx="28" ry="45"/>
+    <ellipse cx="800" cy="640" rx="30" ry="45"/>
+  </g>
+  <!-- Sun -->
+  <circle cx="1500" cy="200" r="80" fill="#F0D060" opacity="0.8"/>
+</svg>
