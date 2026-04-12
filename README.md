@@ -1,33 +1,63 @@
-# Stop Kamenolomu - Bukov u Hořoviček
+# Stop Kamenolomu - Bukov u Hořoviček (Laravel)
 
 Website for the nature preservation campaign against planned quarry development on Tobiášův vrch near Bukov u Hořoviček, Czech Republic.
 
-## Tech Stack
+## Stack
 
-- **HTML + Tailwind CSS** (CDN) — lightweight, no build step
-- **Alpine.js** — reactive UI components
-- **Nginx** — Docker container serving static files
-- **News data** — JSON-driven articles (`data/news.json`)
+- Laravel 12 (PHP 8.2+)
+- Blade templates
+- Tailwind CSS (CDN)
+- Alpine.js
+- JSON-driven news data (`public/data/news.json`)
 
-## Running Locally
+## Local Run
+
+1. Install dependencies:
 
 ```bash
-docker-compose up -d
+composer install
 ```
 
-Site will be available at **http://localhost:8085**
+2. Create environment file:
 
-## Pages
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-- **Domů** (`/`) — Homepage with hero, key facts, latest news, and call to action
-- **O projektu** (`/about.html`) — Detailed info about the quarry threat, timeline, environmental impact
-- **Aktuality** (`/news.html`) — News and blog articles loaded from `data/news.json`
-- **Petice** (`/petition.html`) — Petition info, signature count, signing locations
-- **Kontakt** (`/contact.html`) — Contact form and addresses
+3. Start the app:
+
+```bash
+php artisan serve
+```
+
+App runs at `http://127.0.0.1:8000`.
+
+## Routes
+
+- `/` - Homepage
+- `/about` - O projektu
+- `/news` - Aktuality
+- `/petition` - Petice
+- `/contact` - Kontakt
+
+Legacy URLs with `.html` are redirected with `301`:
+
+- `/index.html`
+- `/about.html`
+- `/news.html`
+- `/petition.html`
+- `/contact.html`
+
+## Project Structure
+
+- Views: `resources/views/*.blade.php`
+- Static assets: `public/css`, `public/js`, `public/images`
+- News data: `public/data/news.json`
 
 ## Adding News
 
-Edit `data/news.json` and add a new entry:
+Edit `public/data/news.json` and add a new entry:
 
 ```json
 {
