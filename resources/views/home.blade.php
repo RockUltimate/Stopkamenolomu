@@ -3,16 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stop Kamenolomu - Bukov u Hořoviček</title>
+  <title>Domů | Stop Kamenolomu - Bukov u Hořoviček</title>
   <meta name="description" content="Chraňme naši krajinu a naše domovy. Zastavme plánovaný kamenolom u Bukova na Tobiášově vrchu.">
+  <meta property="og:title" content="Domů | Stop Kamenolomu">
+  <meta property="og:description" content="Chraňme naši krajinu a naše domovy. Zastavme plánovaný kamenolom u Bukova na Tobiášově vrchu.">
+  <meta property="og:image" content="https://stopkamenolomu.cz/images/petition-title.jpg">
+  <meta property="og:url" content="https://stopkamenolomu.cz/">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Domů | Stop Kamenolomu">
+  <meta name="twitter:description" content="Chraňme naši krajinu a naše domovy. Zastavme plánovaný kamenolom u Bukova na Tobiášově vrchu.">
+  <meta name="twitter:image" content="https://stopkamenolomu.cz/images/petition-title.jpg">
+  <link rel="canonical" href="https://stopkamenolomu.cz/">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#2D5F2D">
+  <meta name="msapplication-TileColor" content="#2D5F2D">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Stop Kamenolomu">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind (production build) -->
+  <link rel="stylesheet" href="/css/tailwind.production.css">
 
   <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -62,8 +83,11 @@
     </div>
   </nav>
 
+  <main id="main-content">
+
+
   <!-- ===== Hero ===== -->
-  <section class="hero" style="background-image: url('/images/petition-title.jpg');">
+  <section class="hero hero-webp" style="background-image: url('/images/petition-title.jpg');">
     <div class="hero-overlay"></div>
     <div class="relative z-10 flex flex-col items-center justify-center min-h-[85vh] text-center px-6">
       <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">
@@ -193,7 +217,9 @@
   </section>
 
   <!-- ===== Footer ===== -->
-  <footer class="bg-[#1E421E] text-white py-16 px-6">
+  </main>
+
+<footer class="bg-[#1E421E] text-white py-16 px-6">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
       <div>
         <h3 class="text-lg font-bold mb-4" style="font-family: 'Newsreader', serif;">STOP KAMENOLOMU</h3>

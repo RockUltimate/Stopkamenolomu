@@ -18,12 +18,19 @@ document.addEventListener('alpine:init', () => {
     articles: [],
     displayCount: 3,
     loading: true,
+    fallbackImage: '/images/news-placeholder.svg',
 
     async init() {
       try {
         const res = await fetch('/data/news.json');
         const data = await res.json();
-        this.articles = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+        this.articles = data
+          .map((article) => ({
+            ...article,
+            image: this.resolveImagePath(article.image),
+            _expanded: false
+          }))
+          .sort((a, b) => new Date(b.date) - new Date(a.date));
       } catch (e) {
         console.error('Failed to load news:', e);
         this.articles = [];
@@ -44,6 +51,28 @@ document.addEventListener('alpine:init', () => {
       this.displayCount += 3;
     },
 
+    resolveImagePath(imagePath) {
+      if (typeof imagePath !== 'string' || imagePath.trim() === '') {
+        return this.fallbackImage;
+      }
+
+      if (imagePath.startsWith('http://') || imagePath.startsWith('https://') || imagePath.startsWith('/')) {
+        return imagePath;
+      }
+
+      return `/${imagePath.replace(/^\.?\//, '')}`;
+    },
+
+    handleImageError(event) {
+      if (!event?.target) {
+        return;
+      }
+
+      if (event.target.getAttribute('src') !== this.fallbackImage) {
+        event.target.setAttribute('src', this.fallbackImage);
+      }
+    },
+
     formatDate(dateStr) {
       const d = new Date(dateStr);
       return d.toLocaleDateString('cs-CZ', { day: 'numeric', month: 'numeric', year: 'numeric' });
@@ -57,15 +86,25 @@ document.addEventListener('alpine:init', () => {
     message: '',
     submitted: false,
     error: false,
+    errorMessage: '',
 
     submit() {
       if (!this.name || !this.email || !this.message) {
         this.error = true;
+        this.submitted = false;
+        this.errorMessage = 'Prosím vyplňte všechna povinná pole.';
         return;
       }
+
+      const subject = encodeURIComponent('Zpráva z kontaktniho formulare Stop Kamenolomu');
+      const body = encodeURIComponent(
+        `Jmeno: ${this.name}\nE-mail: ${this.email}\n\nZprava:\n${this.message}`
+      );
+      const mailtoUrl = `mailto:info@stopkamenolomu.cz?subject=${subject}&body=${body}`;
+      window.location.href = mailtoUrl;
+
       this.error = false;
-      // In production, send to a backend endpoint
-      console.log('Form submitted:', { name: this.name, email: this.email, message: this.message });
+      this.errorMessage = '';
       this.submitted = true;
       this.name = '';
       this.email = '';
