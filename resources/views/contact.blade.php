@@ -3,8 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakt - Stop Kamenolomu</title>
+  <title>Kontakt | Stop Kamenolomu</title>
   <meta name="description" content="Kontaktujte iniciativu Stop Kamenolomu - Bukov u Hořoviček.">
+  <meta property="og:title" content="Kontakt | Stop Kamenolomu">
+  <meta property="og:description" content="Kontaktujte iniciativu Stop Kamenolomu - Bukov u Hořoviček.">
+  <meta property="og:image" content="https://stopkamenolomu.cz/images/petition-title.jpg">
+  <meta property="og:url" content="https://stopkamenolomu.cz/contact">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kontakt | Stop Kamenolomu">
+  <meta name="twitter:description" content="Kontaktujte iniciativu Stop Kamenolomu - Bukov u Hořoviček.">
+  <meta name="twitter:image" content="https://stopkamenolomu.cz/images/petition-title.jpg">
+  <link rel="canonical" href="https://stopkamenolomu.cz/contact">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#2D5F2D">
+  <meta name="msapplication-TileColor" content="#2D5F2D">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Stop Kamenolomu">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -44,6 +65,9 @@
       <a href="/contact" class="block py-2 text-white">Kontakt</a>
     </div>
   </nav>
+
+  <main id="main-content">
+
 
   <!-- ===== Page Header ===== -->
   <section class="bg-primary pt-32 pb-16 px-6">
@@ -149,7 +173,9 @@
   </section>
 
   <!-- ===== Footer ===== -->
-  <footer class="bg-[#1E421E] text-white py-16 px-6">
+  </main>
+
+<footer class="bg-[#1E421E] text-white py-16 px-6">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
       <div>
         <h3 class="text-lg font-bold mb-4" style="font-family: 'Newsreader', serif;">STOP KAMENOLOMU</h3>

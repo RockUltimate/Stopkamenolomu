@@ -1,0 +1,23 @@
+{
+  "name": "Stop Kamenolomu - Bukov u Hořoviček",
+  "short_name": "Stop Kamenolomu",
+  "description": "Chranme nasi krajinu - obcanska iniciativa proti planovanemu kamenolomu",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#2D5F2D",
+  "background_color": "#F5F5DC",
+  "icons": [
+    {
+      "src": "/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
