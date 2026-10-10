@@ -310,3 +310,13 @@ h1, h2, h3, h4, h5, h6 {
     left: 1rem;
   }
 }
+
+/* STO-37: serve WebP hero when supported (smaller payload than hero.jpg fallback) */
+@supports (background-image: url('/images/petition-title.webp')) {
+  .hero-webp {
+    background-image: image-set(
+      url('/images/petition-title.webp') type('image/webp'),
+      url('/images/petition-title.jpg') type('image/jpeg')
+    );
+  }
+}
