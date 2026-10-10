@@ -1,0 +1,15 @@
+services:
+  web:
+    image: stopkamenolomu-web:v2
+    build: .
+    container_name: skm-web
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8095:80"
+    volumes:
+      - skm-env:/skm-env
+    environment:
+      - ENV_PATH=/skm-env/.env
+
+volumes:
+  skm-env:
